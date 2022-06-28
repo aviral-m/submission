@@ -117,11 +117,11 @@ class UpliftTreeRegressor():
             return self.make_prediction(x, tree.right)
         
     def predict(self, X):
-        preditions = [self.make_prediction(x, self.root) for x in X]
+        predictions = [self.make_prediction(x, self.root) for x in X]
         return predictions
 
 
 regressor = UpliftTreeRegressor()
 regressor.fit(X,treatment,Y)
 regressor.print_tree()
-
+Y_pred = regressor.predict(X)
